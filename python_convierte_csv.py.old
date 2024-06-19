@@ -1,0 +1,70 @@
+#!/usr/local/bin/python
+# coding: latin-1
+import os
+import pandas as pd
+import glob
+import re
+import xlrd
+
+# Directorio donde se encuentran los archivos Excel
+#directorio_excel = 'D:\\DESCARGAS\\'
+directorio_excel = os.getenv('DESCARGA_RAIZ') 
+
+# Directorio donde se guardarán los archivos CSV
+directorio_csv = 'D:\\DESCARGAS\\CSV\\'
+directorio_csv = os.getenv('DESCARGA_CSV')
+
+f = open(directorio_csv + "\\archivos_a_procesar.txt", "w")
+f.write("Nombres" + "\n" )
+# Patrones para los nombres de archivo
+patron_guia_excel = re.compile(r'Guia_Excel_\d+\.xls')
+patron_tabla_homologacion = re.compile(r'Tabla de Homologacion \d+\.xlsx')
+
+# Obtener la lista de nombres de archivo de Excel en el directorio
+archivos_excel = glob.glob(directorio_excel + '*.xls*')
+
+# Iterar sobre cada archivo Excel
+for archivo_excel in archivos_excel:
+    # Obtener el nombre del archivo sin la ruta
+    nombre_archivo = os.path.basename(archivo_excel)
+    
+    print("NOMBRE: ", nombre_archivo)
+    f.write(nombre_archivo.split('.')[0] + '.csv' + "\n")
+
+    # Comprobar si el nombre del archivo coincide con el patrón de Guia_Excel_???
+    if patron_guia_excel.match(nombre_archivo):
+        # Leer el archivo Excel con xlrd
+        wb = xlrd.open_workbook(archivo_excel)
+        # Obtener la hoja por índice o nombre
+        nombre_hoja = 'Codigos'
+        sheet = wb.sheet_by_name(nombre_hoja)
+        # Obtener los datos de la hoja
+        data = [sheet.row_values(i) for i in range(sheet.nrows)]
+        # Convertir los datos a un DataFrame de pandas
+        df = pd.DataFrame(data)
+        # Generar el nombre de archivo CSV
+        nombre_archivo_csv = f"{directorio_csv}{nombre_archivo.split('.')[0]}.csv"
+        # Guardar el DataFrame como un archivo CSV
+        df.to_csv(nombre_archivo_csv,index=False,header=False,sep=";",encoding='latin-1')
+        print(f"Se ha convertido la hoja '{nombre_hoja}' de {nombre_archivo} a CSV.")
+    
+    # Comprobar si el nombre del archivo coincide con el patrón de Tabla de Homologacion ???
+    elif patron_tabla_homologacion.match(nombre_archivo):
+        # Leer el archivo Excel con xlrd
+        wb = xlrd.open_workbook(archivo_excel)
+        # Obtener los datos de la primera hoja
+        sheet = wb.sheet_by_index(0)
+        # Obtener los datos de la hoja
+        data = [sheet.row_values(i) for i in range(sheet.nrows)]
+        # Convertir los datos a un DataFrame de pandas
+        df = pd.DataFrame(data)
+        # Generar el nombre de archivo CSV
+        nombre_archivo_csv = f"{directorio_csv}{nombre_archivo.split('.')[0]}.csv"
+        # Guardar el DataFrame como un archivo CSV
+        df.to_csv(nombre_archivo_csv, index=False,header=False,sep=";",encoding='latin-1')
+        print(f"Se ha convertido el archivo {nombre_archivo} a CSV.")
+    
+    else:
+        print(f"No se procesó el archivo {nombre_archivo}.")
+f.close()
+print("La conversión de Excel a CSV se ha completado.")

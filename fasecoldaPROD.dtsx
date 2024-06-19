@@ -1,0 +1,2580 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/19/2024 12:48:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-H0ADGQ8"
+  DTS:CreatorName="DESKTOP-H0ADGQ8\ruben"
+  DTS:DTSID="{0A88CFB2-E053-411D-8859-E4BF1B935308}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="13322"
+  DTS:ObjectName="fasecoldaPROD"
+  DTS:PackageType="5"
+  DTS:VersionBuild="212"
+  DTS:VersionGUID="{22D4B791-1B11-4DCC-9D57-C0533695E43F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[excel csv a sql]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{99DB94E5-31FE-486E-A6B5-B0E8CA6128AD}"
+      DTS:ObjectName="excel csv a sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="13322"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\eac\descargas\CSV\excel.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{A6EF220D-8BD4-4CA2-8908-FA4617537A02}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lee directorio de descargas]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="archivos_a_procesar.txt - ubicacion"
+      DTS:DTSID="{05336373-79C0-40BF-9280-AD891C07194F}"
+      DTS:ObjectName="lee directorio de descargas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="13322"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\eac\descargas\CSV\archivos_a_procesar.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nombres"
+              DTS:DTSID="{20F10CDF-AC49-4F6B-A113-5C9E556EC354}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lee parametros]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{882F6074-642F-4378-AB74-7FFF3FBB3C76}"
+      DTS:ObjectName="lee parametros">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="13322"
+          DTS:HeaderRowDelimiter="_x007C_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\eac\descargas\parametros\parametros.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{313C71BD-9554-46D1-B518-C1F073B6D84A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{511AE3F9-7621-4697-A983-10B5DDA1F5D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{D37F9B60-763E-4E69-BA44-913F83C35233}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP QA Colombia]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{03E1EB83-6059-45A4-A2F7-E318750E4E01}"
+      DTS:ObjectName="SMTP QA Colombia">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=smtp.sendgrid.net;UseWindowsAuthentication=False;EnableSsl=False;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+      DTS:ObjectName="sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net;User ID=user_enaccion;Initial Catalog=inbroker;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_en;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt/p9i54oukam6+/gHf72jAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADn9U1ur6nwd+chlgW0OYMhz4qtKHnio4fnPVFdfzf9ogAAAAAOgAAAAAIAACAAAABa8OB3y8PiWy/J6tPHdhf2eSP09P2qFegOTz3ruLYJeTAAAADzoDzvj3l753LGTT93+j1FxzdWflenu2/MkGKzowdhqEYEvw0LRq4SPACkfNrSzHhAAAAAy7SLfF2RZ0YiAYj9Q3i6UHxvO8Pb3QNJaufyJNZd1H9m2eSx91kI8aCIx/UmXfsEE3W27BKGKL4QlzCbTKaI+A</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1AD5F743-79A1-454B-A23F-C363CF4608FA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DESCARGA">
+      <DTS:VariableValue
+        DTS:DataType="8">G:\eac\descargas\parametros\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E0F85000-C1BF-4DA0-9D8E-384324D4F76E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DESCARGA_CSV">
+      <DTS:VariableValue
+        DTS:DataType="8">G:\eac\descargas\csv\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{84D1CA78-81B4-4508-9B1D-2E51BC74A8C9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DESCARGA_RAIZ">
+      <DTS:VariableValue
+        DTS:DataType="8">G:\eac\descargas\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{94171969-B58E-408D-9716-27A3304BA144}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Error">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF9BD2CB-F76C-4E79-B041-FEDD2028146E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="exec_python">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\crisrobles\AppData\Local\Programs\Python\Python310\python.exe</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1AF7EC15-0ED0-4D24-BF7F-552B59EE315C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="python_convierte_csv">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\crisrobles\source\repos\seguros_version_produccion_240619\python_convierte_csv.py</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CBCE4191-130C-4B46-92B4-00CD050257BA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="python_seg_01">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\crisrobles\source\repos\seguros_version_produccion_240619\seguros01.py</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{00B70F61-45B1-4AF2-94DE-5D3B8CEEA6B8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="python_seg_02">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\crisrobles\source\repos\seguros_version_produccion_240619\seguros02.py</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{87575E59-B61E-4274-BD8F-C301EEDE92C9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\carga parametros"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C46F1D0D-CDFD-47E4-B721-8772814C198F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="carga parametros"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\carga parametros.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{2EAA07F5-354E-445F-9C3B-540F394FCD55}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{3C97AD09-E17C-411C-BF14-1F259CE88C1A}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\carga parametros.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{b58588f0-0d9f-43cd-9ebc-80b8a1c11298}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al intentar leer el archivo con los parametros ',&#xA;    @subject = 'SSIS - Carga parametros'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\carga parametros\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="13322"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\carga parametros\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lee parametros]"
+                  connectionManagerRefId="Package.ConnectionManagers[lee parametros]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      length="50"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]"
+                      name="Column 0"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                      length="50"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 1]"
+                      name="Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                      length="50"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 2]"
+                      name="Column 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 1" />
+                    <externalMetadataColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\carga parametros\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[enaccion].[paso]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\carga parametros\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 0]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Column 0"
+                      externalMetadataColumnId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_element]"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]" />
+                    <inputColumn
+                      refId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Column 1"
+                      externalMetadataColumnId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[name_element]"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 1]" />
+                    <inputColumn
+                      refId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Column 2"
+                      externalMetadataColumnId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[d_carga]"
+                      lineageId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output].Columns[Column 2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_element]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_element" />
+                    <externalMetadataColumn
+                      refId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[name_element]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name_element" />
+                    <externalMetadataColumn
+                      refId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[d_carga]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="d_carga" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\carga parametros\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga parametros\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\carga parametros\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\carga parametros\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\carga parametros\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\carga parametros.Paths[Flat File Source Output]"
+              endId="Package\carga parametros\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\carga parametros\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Conversion a csv con python"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Graba el archivo para que inserte sqlserver"
+      DTS:DTSID="{CA66AB05-91D1-4854-8FF2-85C6DC439491}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Conversion a csv con python"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::python_convierte_csv] + "  " +  @[User::DESCARGA_RAIZ] + " " +  @[User::DESCARGA_CSV]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[User::exec_python]</DTS:PropertyExpression>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Conversion a csv con python.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{95FB3DAD-EAFF-42F2-BF40-1C8356D8773A}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{33D883A6-282F-41C3-9A6E-FADBE54DF601}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Conversion a csv con python.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{4ed07a78-186a-4aed-8e14-661e9b91027f}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al convertir a csv los archivos de fasecolda ',&#xA;    @subject = 'SSIS - Conversion a csv con python'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Users\crisrobles\AppData\Local\Programs\Python\Python310\python.exe"
+          Arguments="C:\Users\crisrobles\source\repos\seguros_version_produccion_240619\python_convierte_csv.py  G:\eac\descargas\ G:\eac\descargas\csv\" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ejecuta py seguros01"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="accede al link y saca el ultimo elemento"
+      DTS:DTSID="{3891577A-6D95-466E-87AE-9F9181372BF5}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ejecuta py seguros01"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::python_seg_01] + " " +  @[User::DESCARGA]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[User::exec_python]</DTS:PropertyExpression>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Ejecuta py seguros01.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{33D6EAD2-7106-42E3-9D26-01D0644FC5E7}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{4ED80601-38D4-4C45-9E63-C9A31EFA7BE3}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Ejecuta py seguros01.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{994eb871-7e6b-44f0-a94d-8a9c8b6ab483}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se ha producido un error al verificar el archivo de fasecolda',&#xA;    @subject = 'SSIS - Error Ejecuta py seguros01';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Users\crisrobles\AppData\Local\Programs\Python\Python310\python.exe"
+          Arguments="C:\Users\crisrobles\source\repos\seguros_version_produccion_240619\seguros01.py G:\eac\descargas\parametros\" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ejecuta py seguros02 que baja los archivos"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Baja los archivos zipeados y los descomprime"
+      DTS:DTSID="{E05912BC-9063-4432-A8D2-FD884AECF7A4}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ejecuta py seguros02 que baja los archivos"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::python_seg_02]+  " " +  @[User::DESCARGA] + "parametros.txt" + " " +  @[User::DESCARGA_RAIZ]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[User::exec_python]</DTS:PropertyExpression>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Ejecuta py seguros02 que baja los archivos.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{ADE6E818-578D-48B9-B646-BB4CC547B8CD}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{25BE7B40-2D27-4885-9219-9C6491C4347B}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Ejecuta py seguros02 que baja los archivos.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{12994208-d9b0-474b-bc77-e27c57ea2959}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al bajar el archivo de fasecolda',&#xA;    @subject = 'SSIS - Ejecuta py seguros02 que baja los archivos de fasecolda'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Users\crisrobles\AppData\Local\Programs\Python\Python310\python.exe"
+          Arguments="C:\Users\crisrobles\source\repos\seguros_version_produccion_240619\seguros02.py G:\eac\descargas\parametros\parametros.txt G:\eac\descargas\" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Envio de correo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{b6ec9bb0-3e7f-466a-ac93-402bdcffc6a1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Envio de correo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Proceso Fasecolda ejecutado correctamente',&#xA;    @subject = 'Proceso Fasecolda  finalizado correctamente'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Evalua si el arch ya fue bajado(tabla paso)"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="ejecuta un script en la base de datos sqlserver"
+      DTS:DTSID="{F644E408-8C2D-43FF-A070-89C14D055E8F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Evalua si el arch ya fue bajado(tabla paso)"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+          SQLTask:SqlStatementSource="declare @h_cuenta bigint&#xA;declare @tab_resultado table  (h_cuenta varchar(5))&#xA;&#xA;begin&#xA;&#xA;select @h_cuenta=isnull(count(1),0)&#xA;from enaccion.seguros_archivos s inner join enaccion.paso p on s.nombre=p.name_element&#xA;&#xA;if @h_cuenta&gt;0&#xA;   begin&#xA;       insert into @tab_resultado values ('si')&#xA;&#xA;   end   &#xA;else&#xA;   begin&#xA;       insert into @tab_resultado values ('no')&#xA;   end&#xA;select h_cuenta from @tab_resultado&#xA;end&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="h_cuenta"
+            SQLTask:DtsVariableName="User::Variable" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Final del proceso"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{28A46A8A-9639-485A-AA43-7DE7AB38A852}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Final del proceso"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+          SQLTask:SqlStatementSource="select 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Graba archivo de control en la bd"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{C4E22F7B-FCAC-4953-B50E-3EA338E62854}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Graba archivo de control en la bd"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Graba archivo de control en la bd.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{DB986656-00F8-4F85-9FCF-3BD48315C922}"
+          DTS:EventID="7340144"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{517904CC-75ED-4E05-A9A1-767A28414D11}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Graba archivo de control en la bd.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{cc72b8b9-c24f-49af-9aaf-fbbe165a7542}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un al grabar la tabla de control',&#xA;    @subject = 'SSIS - Graba archivo de control en la bd'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+          SQLTask:SqlStatementSource="begin tran&#xA;  insert into enaccion.seguros_archivos &#xA;  select getdate(),name_element,d_carga from enaccion.paso&#xA;commit tran&#xA;&#xA;truncate table enaccion.paso_fasecolda" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\graba archivos a proc"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C637D4B0-9615-4205-9592-81207D90FCF8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="graba archivos a proc"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\graba archivos a proc.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{1A531594-4C11-4188-85B1-0ECD5750E17A}"
+          DTS:EventID="7340144"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{874255A0-6776-42DC-88C7-4A87CCC47317}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\graba archivos a proc.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{4a9d6c25-25d2-4452-863d-3a335b1145ab}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un al grabar el archivo a una tabla en la base de datos - Contiene los archivos a bajar de la web',&#xA;    @subject = 'SSIS - graba archivos a proc'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\graba archivos a proc\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="13322"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\graba archivos a proc\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lee directorio de descargas]"
+                  connectionManagerRefId="Package.ConnectionManagers[lee directorio de descargas]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Output].Columns[Nombres]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Nombres]"
+                      length="50"
+                      lineageId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Output].Columns[Nombres]"
+                      name="Nombres"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Nombres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nombres" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\graba archivos a proc\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[enaccion].[paso_archivos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\graba archivos a proc\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\graba archivos a proc\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\graba archivos a proc\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nombres]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nombres"
+                      externalMetadataColumnId="Package\graba archivos a proc\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre]"
+                      lineageId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Output].Columns[Nombres]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\graba archivos a proc\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="55"
+                      name="nombre" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\graba archivos a proc\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\graba archivos a proc\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\graba archivos a proc\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\graba archivos a proc\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\graba archivos a proc\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\graba archivos a proc\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\graba archivos a proc.Paths[Flat File Source Output]"
+              endId="Package\graba archivos a proc\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\graba archivos a proc\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\graba excel en tabla intermedia"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F55BAC99-8518-4669-99DE-FE939B57E2A1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:ISOLevel="256"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="graba excel en tabla intermedia"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\graba excel en tabla intermedia.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{FA4546D2-C5C8-48F5-888B-847144AB8D84}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{090B4772-D2EA-483D-855A-4CA8A47AD0AA}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\graba excel en tabla intermedia.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{0131b06c-4f4a-440a-8f93-36ee9bd991b7}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un al grabar el archivo excel en una tabla intermedia',&#xA;    @subject = 'SSIS - graba excel en tabla intermedia'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          autoAdjustBufferSize="true"
+          defaultBufferMaxRows="100000"
+          defaultBufferSize="100485760"
+          engineThreads="15"
+          version="1">
+          <components>
+            <component
+              refId="Package\graba excel en tabla intermedia\excel"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="13322"
+              name="excel"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\graba excel en tabla intermedia\excel.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[excel csv a sql]"
+                  connectionManagerRefId="Package.ConnectionManagers[excel csv a sql]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Output].Columns[Column 0]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      length="8000"
+                      lineageId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Output].Columns[Column 0]"
+                      name="Column 0"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="Column 0" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="schema enaccion paso_fasecolda"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[enaccion].[paso_fasecolda]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Inputs[OLE DB Destination Input].Columns[Column 0]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="Column 0"
+                      externalMetadataColumnId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Inputs[OLE DB Destination Input].ExternalColumns[texto]"
+                      lineageId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Output].Columns[Column 0]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Inputs[OLE DB Destination Input].ExternalColumns[texto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="texto" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\graba excel en tabla intermedia.Paths[Flat File Source Output]"
+              endId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\graba excel en tabla intermedia\excel.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Graba tablas dbo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9ADEF179-12FB-49BE-A836-7BAFD9C98DBB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Graba tablas dbo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="declare @id_control int&#xA;select @id_control=max(idcontrol)&#xA;from dbo.Sg_controlFasecolda&#xA;&#xA;exec Stp_ProcesaFasecolda @id_control" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GrabaTablasFASECOLDA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Graba tablas de control y detalle"
+      DTS:DTSID="{DFE190B7-62E1-4D0E-BE27-F5FC4F936E89}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GrabaTablasFASECOLDA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\GrabaTablasFASECOLDA.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{966A6538-E5E0-464C-9B14-9C7E28327378}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{72D475BD-047A-4DF3-B131-0DBB0C6935E3}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\GrabaTablasFASECOLDA.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{15fe3be1-9955-4069-baa9-63c40817598e}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al grabar archivo fasecolda a la base de datos',&#xA;    @subject = 'SSIS - Graba Tablas Fasecolda'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;declare @nombre varchar(100);&#xA;declare @fecha2 varchar(40);&#xA;declare @dia varchar(2);&#xA;declare @mes varchar(2);&#xA;declare @anio varchar(4);&#xA;declare @hora varchar(20)&#xA;declare @valor varchar(20);&#xA;declare @contador int = 1;&#xA;declare @fecha3 datetime;&#xA;select top 1 @nombre=nombre,@fecha2=fecha2 &#xA;from enaccion.seguros_archivos&#xA;order by fecha1 desc&#xA;&#xA;declare c1 cursor for&#xA;SELECT VALUE from STRING_SPLIT(@fecha2,'/')&#xA;&#xA;open c1&#xA;fetch NEXT FROM C1 INTO @VALOR&#xA;&#xA;while @@FETCH_STATUS=0&#xA;begin&#xA;&#xA;&#x9;if @contador= 1  set @mes=@valor&#xA;&#x9;if @contador= 2  set @dia=@valor&#xA;&#x9;if @contador= 3&#xA;&#x9;&#x9;BEGIN&#xA;&#x9;&#x9;&#x9;set @anio=substring(@valor,1,4)&#xA;&#x9;&#x9;&#x9;set @hora=substring(@valor,5,20)&#xA;&#x9;&#x9;END&#xA;&#xA;&#x9;set @contador = @contador + 1 &#xA;&#xA;&#x9;fetch NEXT FROM C1 INTO @VALOR&#xA;end;&#xA;close c1&#xA;deallocate c1&#xA;&#xA;select @fecha3= @anio + '/' + @mes + '/' + @dia + ' ' + @hora &#xA;select @fecha3&#xA;&#xA;begin tran &#xA;insert into dbo.sg_controlFasecolda (NombreArchivo,FechaArchivo,FechaInsert,CantRegistros) &#xA;values&#xA;(@nombre,@fecha3,getdate(),(select count(1) from enaccion.paso_fasecolda))&#xA;commit tran&#xA;&#xA;begin tran&#xA;&#x9;insert into dbo.sg_fasecolda (idcontrol,datosauto,fechainsert)&#xA;&#x9;select&#xA;&#x9;   (select max(IdControl) idcontrol from dbo.sg_controlfasecolda) idcontrol,&#xA;&#x9;    texto,&#xA;&#x9;&#x9;getdate()&#xA;&#x9;from enaccion.paso_fasecolda;&#xA;commit tran" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\trunca tabla de archivos csv"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{09BD62E4-1EA0-4C8A-94EA-9CCA10D2C243}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="trunca tabla de archivos csv"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\trunca tabla de archivos csv.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{CF7B27BC-3716-43A7-9A1A-B10EE930E22F}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{EB1D55DD-A391-4B9D-87CE-B3F2FFF4F9A5}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\trunca tabla de archivos csv.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{a5fffc98-c0e9-49aa-8f97-43f86bf4d1f8}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al truncar la tabla que usa el package ',&#xA;    @subject = 'SSIS - trunca tabla de archivos csv'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+          SQLTask:SqlStatementSource="truncate table enaccion.paso_archivos" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\trunca tabla paso"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="esquema enaccion"
+      DTS:DTSID="{71CF873A-DC5D-4A0A-8CAE-62EF24919072}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="trunca tabla paso"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\trunca tabla paso.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{78E1A5CA-042C-4112-B1E2-514C487B300D}"
+          DTS:EventID="7340144"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{0BBADB15-A4CF-4C9D-8741-3DA9DAE2508A}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\trunca tabla paso.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{df5398be-ea01-479e-9e1a-4c05d2bd0a12}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al intentar truncar la tabla de paso del proceso',&#xA;    @subject = 'SSIS - Trunca tabla paso'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+          SQLTask:SqlStatementSource="truncate table enaccion.paso" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{80BB8856-4E47-4B20-8D49-6B84B231826A}"
+      DTS:From="Package\Ejecuta py seguros01"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\trunca tabla paso" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{83E25FB6-A8A3-45EF-A0C0-0930F0718A00}"
+      DTS:From="Package\trunca tabla paso"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\carga parametros" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{36A62E93-D9DB-42A0-92F5-43257959F078}"
+      DTS:From="Package\carga parametros"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Evalua si el arch ya fue bajado(tabla paso)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{67C8439A-DE7C-4BF8-94CD-98DF0C08E4F2}"
+      DTS:From="Package\Graba archivo de control en la bd"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\graba excel en tabla intermedia" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{A5ED6331-8CF2-41B6-975E-3476598497C5}"
+      DTS:From="Package\graba excel en tabla intermedia"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\GrabaTablasFASECOLDA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{C111681A-5C0F-4D3E-9A59-C8228B06E5A9}"
+      DTS:From="Package\GrabaTablasFASECOLDA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Envio de correo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB1CA140-DB16-4E85-8362-0CC84751CE13}"
+      DTS:From="Package\Envio de correo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Graba tablas dbo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{67AB9A70-C00B-486A-B6A7-CFC38F0AE402}"
+      DTS:From="Package\Graba tablas dbo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Final del proceso" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{01A57464-8445-45A0-9685-267F9347ABFA}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::Variable]==&quot;no&quot;"
+      DTS:From="Package\Evalua si el arch ya fue bajado(tabla paso)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Ejecuta py seguros02 que baja los archivos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9FA8AA06-D4D5-4742-B1AA-C26613B3198D}"
+      DTS:From="Package\Ejecuta py seguros02 que baja los archivos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Conversion a csv con python" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{EE4218A5-17A4-40EB-8C0D-5B15BD4DABDA}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::Variable]==&quot;si&quot;"
+      DTS:From="Package\Evalua si el arch ya fue bajado(tabla paso)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Final del proceso" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{CA4C8724-8288-4881-BC9F-99A5687F8BF2}"
+      DTS:From="Package\Conversion a csv con python"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 6"
+      DTS:To="Package\trunca tabla de archivos csv" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{F12B9118-0BC9-4922-86B4-613DBAEF6C0B}"
+      DTS:From="Package\trunca tabla de archivos csv"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 7"
+      DTS:To="Package\graba archivos a proc" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{0FDBED74-60F7-4713-8777-C8072E757F3A}"
+      DTS:From="Package\graba archivos a proc"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 8"
+      DTS:To="Package\Graba archivo de control en la bd" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\carga parametros"
+          TopLeft="45,152" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Conversion a csv con python"
+          TopLeft="380,236" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Ejecuta py seguros01"
+          TopLeft="39,19" />
+        <NodeLayout
+          Size="291,42"
+          Id="Package\Ejecuta py seguros02 que baja los archivos"
+          TopLeft="352,69" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Envio de correo"
+          TopLeft="251,487" />
+        <NodeLayout
+          Size="313,42"
+          Id="Package\Evalua si el arch ya fue bajado(tabla paso)"
+          TopLeft="6,232" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Final del proceso"
+          TopLeft="45.25,326.25" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Graba archivo de control en la bd"
+          TopLeft="663.25,328.5" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\graba archivos a proc"
+          TopLeft="679,265" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\graba excel en tabla intermedia"
+          TopLeft="437,378" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Graba tablas dbo"
+          TopLeft="53,482" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\GrabaTablasFASECOLDA"
+          TopLeft="244,331" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\trunca tabla de archivos csv"
+          TopLeft="660,209" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\trunca tabla paso"
+          TopLeft="48,66" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="224,40">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13,47"
+              Start="0,0"
+              End="-5.5,47">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,43"
+                    Point2="22.5,47"
+                    Point3="18.5,47" />
+                  <mssgle:LineSegment
+                    End="-5.5,47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="128.5,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="127.5,194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.8333333333333,38"
+              Start="0,0"
+              End="-15.8333333333333,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6840432294978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.6840432294978"
+                    Point2="0,22.6840432294978"
+                    Point3="-4,22.6840432294978" />
+                  <mssgle:LineSegment
+                    End="-11.8333333333333,22.6840432294978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.8333333333333,22.6840432294978"
+                    Point2="-15.8333333333333,22.6840432294978"
+                    Point3="-15.8333333333333,26.6840432294978" />
+                  <mssgle:LineSegment
+                    End="-15.8333333333333,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="663.25,349.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-110.25,28.5"
+              Start="0,0"
+              End="-110.25,21">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-106.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-106.25,0"
+                    Point2="-110.25,0"
+                    Point3="-110.25,4" />
+                  <mssgle:LineSegment
+                    End="-110.25,21" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="437,399">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55,-25.9999999999999"
+              Start="0,0"
+              End="-55,-18.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-51,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51,0"
+                    Point2="-55,0"
+                    Point3="-55,-4" />
+                  <mssgle:LineSegment
+                    End="-55,-18.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="315,373">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14,114"
+              Start="0,0"
+              End="14,106.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.1196581196581" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.1196581196581"
+                    Point2="0,46.1196581196581"
+                    Point3="4,46.1196581196581" />
+                  <mssgle:LineSegment
+                    End="10,46.1196581196581" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10,46.1196581196581"
+                    Point2="14,46.1196581196581"
+                    Point3="14,50.1196581196581" />
+                  <mssgle:LineSegment
+                    End="14,106.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="251,505.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35,0"
+              Start="0,0"
+              End="-27.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-27.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="130.625,482">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-113.75"
+              Start="0,0"
+              End="0,-106.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-106.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="213.333333333333,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="237,-121"
+              Start="0,0"
+              End="237,-113.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-56.4711564507915" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-56.4711564507915"
+                    Point2="0,-60.4711564507915"
+                    Point3="4,-60.4711564507915" />
+                  <mssgle:LineSegment
+                    End="233,-60.4711564507915" />
+                  <mssgle:CubicBezierSegment
+                    Point1="233,-60.4711564507915"
+                    Point2="237,-60.4711564507915"
+                    Point3="237,-64.4711564507915" />
+                  <mssgle:LineSegment
+                    End="237,-113.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="110.5,-55.4711564507915,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="544.666666666667,111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54.6666666666666,125"
+              Start="0,0"
+              End="-54.6666666666666,117.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.4101161995899" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.4101161995899"
+                    Point2="0,50.4101161995899"
+                    Point3="-4,50.4101161995899" />
+                  <mssgle:LineSegment
+                    End="-50.6666666666666,50.4101161995899" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.6666666666666,50.4101161995899"
+                    Point2="-54.6666666666666,50.4101161995899"
+                    Point3="-54.6666666666666,54.4101161995899" />
+                  <mssgle:LineSegment
+                    End="-54.6666666666666,117.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="162.5,274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.75,52.25"
+              Start="0,0"
+              End="-35.75,44.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.125"
+                    Point2="0,26.125"
+                    Point3="-4,26.125" />
+                  <mssgle:LineSegment
+                    End="-31.75,26.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.75,26.125"
+                    Point2="-35.75,26.125"
+                    Point3="-35.75,30.125" />
+                  <mssgle:LineSegment
+                    End="-35.75,44.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.875,31.125,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 6]"
+          TopLeft="600,257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60,-32.6666666666667"
+              Start="0,0"
+              End="52.5,-32.6666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.6788990825688,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.6788990825688,0"
+                    Point2="34.6788990825688,0"
+                    Point3="34.6788990825688,-4" />
+                  <mssgle:LineSegment
+                    End="34.6788990825688,-28.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.6788990825688,-28.6666666666667"
+                    Point2="34.6788990825688,-32.6666666666667"
+                    Point3="38.6788990825688,-32.6666666666667" />
+                  <mssgle:LineSegment
+                    End="52.5,-32.6666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 7]"
+          TopLeft="660,235.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19,50.3333333333333"
+              Start="0,0"
+              End="11.5,50.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,46.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,46.3333333333333"
+                    Point2="-22.5,50.3333333333333"
+                    Point3="-18.5,50.3333333333333" />
+                  <mssgle:LineSegment
+                    End="11.5,50.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 8]"
+          TopLeft="863,286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79.25,42.5"
+              Start="0,0"
+              End="-79.25,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-75.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.25,0"
+                    Point2="-79.25,0"
+                    Point3="-79.25,4" />
+                  <mssgle:LineSegment
+                    End="-79.25,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\carga parametros">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\carga parametros\OLE DB Destination"
+          TopLeft="329,161" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\carga parametros\Flat File Source"
+          TopLeft="243,58" />
+        <EdgeLayout
+          Id="Package\carga parametros.Paths[Flat File Source Output]"
+          TopLeft="321,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.5,61"
+              Start="0,0"
+              End="96.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="4,30.5" />
+                  <mssgle:LineSegment
+                    End="92.5,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.5,30.5"
+                    Point2="96.5,30.5"
+                    Point3="96.5,34.5" />
+                  <mssgle:LineSegment
+                    End="96.5,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\carga parametros.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\carga parametros.EventHandlers[OnError]\Envio de correo"
+          TopLeft="158,44" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\carga parametros\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Conversion a csv con python.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Conversion a csv con python.EventHandlers[OnError]\Envio de correo"
+          TopLeft="180,47" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Ejecuta py seguros01.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Ejecuta py seguros01.EventHandlers[OnError]\Envio de correo"
+          TopLeft="20,20" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Ejecuta py seguros02 que baja los archivos.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Ejecuta py seguros02 que baja los archivos.EventHandlers[OnError]\Envio de correo"
+          TopLeft="278,89" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Graba archivo de control en la bd.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Graba archivo de control en la bd.EventHandlers[OnError]\Envio de correo"
+          TopLeft="162,50" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\graba archivos a proc">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\graba archivos a proc\Flat File Source"
+          TopLeft="290,78" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\graba archivos a proc\OLE DB Destination"
+          TopLeft="335,196" />
+        <EdgeLayout
+          Id="Package\graba archivos a proc.Paths[Flat File Source Output]"
+          TopLeft="368,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.5,76"
+              Start="0,0"
+              End="55.5,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="51.5,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.5,38"
+                    Point2="55.5,38"
+                    Point3="55.5,42" />
+                  <mssgle:LineSegment
+                    End="55.5,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\graba archivos a proc.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\graba archivos a proc.EventHandlers[OnError]\Envio de correo"
+          TopLeft="148,71" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\graba archivos a proc\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\graba excel en tabla intermedia">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="105,42"
+          Id="Package\graba excel en tabla intermedia\excel"
+          TopLeft="212,85" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda"
+          TopLeft="436,184" />
+        <EdgeLayout
+          Id="Package\graba excel en tabla intermedia.Paths[Flat File Source Output]"
+          TopLeft="264.5,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="294,57"
+              Start="0,0"
+              End="294,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
+                  <mssgle:LineSegment
+                    End="290,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="290,28.5"
+                    Point2="294,28.5"
+                    Point3="294,32.5" />
+                  <mssgle:LineSegment
+                    End="294,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\graba excel en tabla intermedia.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\graba excel en tabla intermedia.EventHandlers[OnError]\Envio de correo"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\GrabaTablasFASECOLDA.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\GrabaTablasFASECOLDA.EventHandlers[OnError]\Envio de correo"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\trunca tabla de archivos csv.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\trunca tabla de archivos csv.EventHandlers[OnError]\Envio de correo"
+          TopLeft="245,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\trunca tabla paso.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\trunca tabla paso.EventHandlers[OnError]\Envio de correo"
+          TopLeft="72,32" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

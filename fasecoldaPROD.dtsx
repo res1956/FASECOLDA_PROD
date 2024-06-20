@@ -11,8 +11,8 @@
   DTS:LocaleID="13322"
   DTS:ObjectName="fasecoldaPROD"
   DTS:PackageType="5"
-  DTS:VersionBuild="212"
-  DTS:VersionGUID="{22D4B791-1B11-4DCC-9D57-C0533695E43F}">
+  DTS:VersionBuild="216"
+  DTS:VersionGUID="{C2E153C9-45BC-4E5E-A4C2-00F2EF499607}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -131,19 +131,19 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+      DTS:refId="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
-      DTS:ObjectName="sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion">
+      DTS:ObjectName="sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net;User ID=user_enaccion;Initial Catalog=inbroker;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_en;">
+          DTS:ConnectionString="Data Source=sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net;User ID=user_enaccionco;Initial Catalog=inbroker;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_en;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt/p9i54oukam6+/gHf72jAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADn9U1ur6nwd+chlgW0OYMhz4qtKHnio4fnPVFdfzf9ogAAAAAOgAAAAAIAACAAAABa8OB3y8PiWy/J6tPHdhf2eSP09P2qFegOTz3ruLYJeTAAAADzoDzvj3l753LGTT93+j1FxzdWflenu2/MkGKzowdhqEYEvw0LRq4SPACkfNrSzHhAAAAAy7SLfF2RZ0YiAYj9Q3i6UHxvO8Pb3QNJaufyJNZd1H9m2eSx91kI8aCIx/UmXfsEE3W27BKGKL4QlzCbTKaI+A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt/p9i54oukam6+/gHf72jAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABSvmcch2F1VU2KP3VpuwfD9clfcovdasO6JAxYWwkNawAAAAAOgAAAAAIAACAAAAALaExVYwKSOncR5MKtwJ2z4Hi5vqoywXKBL/t3THvJZDAAAAD1OHJv1bqGNkCua1Ii2y6W5JuU3SGx0qTwkHa1njp8yqyXlJiYf7evyUzM2n8RnZ9AAAAAmzzv1jWZ2B15RiIxuci6M2RCCDgyxQSwxghb97UpP1B06NHM0D5UO/GbxlL6ADvrGBaPlLX2RsWWj/uqXC1wVA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -498,8 +498,8 @@
               <connections>
                 <connection
                   refId="Package\carga parametros\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
-                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1106,8 +1106,8 @@
               <connections>
                 <connection
                   refId="Package\graba archivos a proc\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
-                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1387,8 +1387,8 @@
               <connections>
                 <connection
                   refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
-                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

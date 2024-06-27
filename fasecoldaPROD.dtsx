@@ -11,8 +11,8 @@
   DTS:LocaleID="13322"
   DTS:ObjectName="fasecoldaPROD"
   DTS:PackageType="5"
-  DTS:VersionBuild="217"
-  DTS:VersionGUID="{CAFFAEC0-23B6-4F07-B91E-8398A3FA3B96}">
+  DTS:VersionBuild="220"
+  DTS:VersionGUID="{34F1C689-ACDC-4CC6-9D00-A6471A04BB40}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -143,7 +143,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS0S31FNZn06DVidyP3+44wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAARLwHeoTDkxiMBlBN5LRdCxxMBD6HVmEYrdVC2U5hB7gAAAAAOgAAAAAIAACAAAABQ0u7KwwzVzf9gSuTHmMjEDosQkpJvW3c51FE+8/ubgDAAAADdCRPvJuGOC2TWZ+2RPb4V+lonPE6OWSqGAYnPj89ITPc0CqJLF/NRdNW8KBEkirVAAAAAt+Y6p3HwdxKzqB5PRbKyYwv2+024V6Q+eCbB9812R5+Azd070x7365+r6euz7TsV2RWSGj1QoHtsjuYi1WxVLw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS0S31FNZn06DVidyP3+44wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACjkwsR9dq8FQdyOHA16l8muZtYvQURoSzMqxZQnMfw+wAAAAAOgAAAAAIAACAAAACG9RY1+iVZFb7kpXumGxgbOUw+6IRUu+FtVSrVNNOTeTAAAAARlOWhr7l8c3OvgaleFE43mac64i4llT7wmic1oEhbobgOztDaPY6rTqRAvAtc0lVAAAAAGIR1npuHJpiSUNdP5e0twwEbD3GS0MkRYfqweAMM/z+oag3V4ZRvTCFj6taGe5HbAoCqx1yzwBMtTrcYgtCMWA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -784,7 +784,6 @@
       DTS:refId="Package\Envio de correo"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{b6ec9bb0-3e7f-466a-ac93-402bdcffc6a1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -1464,6 +1463,47 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Graba tablas dbo.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{425DCEEA-2566-44AA-8E4C-E21F0DC870C1}"
+          DTS:EventID="7340144"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{9ABAE241-E852-482B-9D46-549E1E5E025C}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Graba tablas dbo.EventHandlers[OnError]\Envio de correo"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{c53d8440-467d-4b01-8600-c88d60d1c59b}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Envio de correo"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'se produjo un error al ejecutar el SP Stp_ProcesaFasecolda ',&#xA;    @subject = 'SSIS - ERROR SP Stp_ProcesaFasecolda '" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
@@ -1796,7 +1836,7 @@
         <NodeLayout
           Size="156,42"
           Id="Package\Envio de correo"
-          TopLeft="251,487" />
+          TopLeft="251,486" />
         <NodeLayout
           Size="313,42"
           Id="Package\Evalua si el arch ya fue bajado(tabla paso)"
@@ -1985,26 +2025,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="14,114"
+              EndConnector="14,113"
               Start="0,0"
-              End="14,106.5">
+              End="14,105.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.1196581196581" />
+                    End="0,41.7150997150997" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42.1196581196581"
-                    Point2="0,46.1196581196581"
-                    Point3="4,46.1196581196581" />
+                    Point1="0,41.7150997150997"
+                    Point2="0,45.7150997150997"
+                    Point3="4,45.7150997150997" />
                   <mssgle:LineSegment
-                    End="10,46.1196581196581" />
+                    End="10,45.7150997150997" />
                   <mssgle:CubicBezierSegment
-                    Point1="10,46.1196581196581"
-                    Point2="14,46.1196581196581"
-                    Point3="14,50.1196581196581" />
+                    Point1="10,45.7150997150997"
+                    Point2="14,45.7150997150997"
+                    Point3="14,49.7150997150997" />
                   <mssgle:LineSegment
-                    End="14,106.5" />
+                    End="14,105.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2015,7 +2055,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="251,505.5">
+          TopLeft="251,505">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2570,6 +2610,18 @@
           Size="156,42"
           Id="Package\trunca tabla paso.EventHandlers[OnError]\Envio de correo"
           TopLeft="72,32" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Graba tablas dbo.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Graba tablas dbo.EventHandlers[OnError]\Envio de correo"
+          TopLeft="208,120" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>

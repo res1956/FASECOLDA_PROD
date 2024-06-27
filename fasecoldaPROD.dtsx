@@ -11,8 +11,8 @@
   DTS:LocaleID="13322"
   DTS:ObjectName="fasecoldaPROD"
   DTS:PackageType="5"
-  DTS:VersionBuild="212"
-  DTS:VersionGUID="{22D4B791-1B11-4DCC-9D57-C0533695E43F}">
+  DTS:VersionBuild="217"
+  DTS:VersionGUID="{CAFFAEC0-23B6-4F07-B91E-8398A3FA3B96}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -131,19 +131,19 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+      DTS:refId="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
-      DTS:ObjectName="sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion">
+      DTS:ObjectName="sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net;User ID=user_enaccion;Initial Catalog=inbroker;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_en;">
+          DTS:ConnectionString="Data Source=sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net;User ID=user_enaccionco;Initial Catalog=inbroker;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_en;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAt/p9i54oukam6+/gHf72jAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADn9U1ur6nwd+chlgW0OYMhz4qtKHnio4fnPVFdfzf9ogAAAAAOgAAAAAIAACAAAABa8OB3y8PiWy/J6tPHdhf2eSP09P2qFegOTz3ruLYJeTAAAADzoDzvj3l753LGTT93+j1FxzdWflenu2/MkGKzowdhqEYEvw0LRq4SPACkfNrSzHhAAAAAy7SLfF2RZ0YiAYj9Q3i6UHxvO8Pb3QNJaufyJNZd1H9m2eSx91kI8aCIx/UmXfsEE3W27BKGKL4QlzCbTKaI+A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS0S31FNZn06DVidyP3+44wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAARLwHeoTDkxiMBlBN5LRdCxxMBD6HVmEYrdVC2U5hB7gAAAAAOgAAAAAIAACAAAABQ0u7KwwzVzf9gSuTHmMjEDosQkpJvW3c51FE+8/ubgDAAAADdCRPvJuGOC2TWZ+2RPb4V+lonPE6OWSqGAYnPj89ITPc0CqJLF/NRdNW8KBEkirVAAAAAt+Y6p3HwdxKzqB5PRbKyYwv2+024V6Q+eCbB9812R5+Azd070x7365+r6euz7TsV2RWSGj1QoHtsjuYi1WxVLw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -269,7 +269,6 @@
               DTS:refId="Package\carga parametros.EventHandlers[OnError]\Envio de correo"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:Disabled="True"
               DTS:DTSID="{b58588f0-0d9f-43cd-9ebc-80b8a1c11298}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
@@ -498,8 +497,8 @@
               <connections>
                 <connection
                   refId="Package\carga parametros\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
-                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -635,7 +634,6 @@
               DTS:refId="Package\Conversion a csv con python.EventHandlers[OnError]\Envio de correo"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:Disabled="True"
               DTS:DTSID="{4ed07a78-186a-4aed-8e14-661e9b91027f}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
@@ -760,7 +758,6 @@
               DTS:refId="Package\Ejecuta py seguros02 que baja los archivos.EventHandlers[OnError]\Envio de correo"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:Disabled="True"
               DTS:DTSID="{12994208-d9b0-474b-bc77-e27c57ea2959}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
@@ -1106,8 +1103,8 @@
               <connections>
                 <connection
                   refId="Package\graba archivos a proc\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
-                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1387,8 +1384,8 @@
               <connections>
                 <connection
                   refId="Package\graba excel en tabla intermedia\schema enaccion paso_fasecolda.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
-                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-qa-9k4f.d42bbbc966ba.database.windows.net.inbrokerdev.user_enaccion]"
+                  connectionManagerID="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
+                  connectionManagerRefId="Package.ConnectionManagers[sqlm-inbroker-prod-1c0l.becb77e6bcf9.database.windows.net]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

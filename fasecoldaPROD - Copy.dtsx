@@ -279,7 +279,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un error al intentar leer el archivo con los parametros ',&#xA;    @subject = 'SSIS - Carga parametros'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al intentar leer el archivo con los parametros ',&#xA;    @subject = 'SSIS - Carga parametros'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -644,7 +644,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un error al convertir a csv los archivos de fasecolda ',&#xA;    @subject = 'SSIS - Conversion a csv con python'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al convertir a csv los archivos de fasecolda ',&#xA;    @subject = 'SSIS - Conversion a csv con python'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -706,7 +706,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se ha producido un error al verificar el archivo de fasecolda',&#xA;    @subject = 'SSIS - Error Ejecuta py seguros01';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se ha producido un error al verificar el archivo de fasecolda',&#xA;    @subject = 'SSIS - Error Ejecuta py seguros01';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -768,7 +768,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un error al bajar el archivo de fasecolda',&#xA;    @subject = 'SSIS - Ejecuta py seguros02 que baja los archivos de fasecolda'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al bajar el archivo de fasecolda',&#xA;    @subject = 'SSIS - Ejecuta py seguros02 que baja los archivos de fasecolda'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -795,7 +795,7 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Proceso Fasecolda ejecutado correctamente',&#xA;    @subject = 'Proceso Fasecolda  finalizado correctamente'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Proceso Fasecolda ejecutado correctamente',&#xA;    @subject = 'Proceso Fasecolda  finalizado correctamente'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -883,7 +883,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un al grabar la tabla de control',&#xA;    @subject = 'SSIS - Graba archivo de control en la bd'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un al grabar la tabla de control',&#xA;    @subject = 'SSIS - Graba archivo de control en la bd'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -940,7 +940,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un al grabar el archivo a una tabla en la base de datos - Contiene los archivos a bajar de la web',&#xA;    @subject = 'SSIS - graba archivos a proc'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un al grabar el archivo a una tabla en la base de datos - Contiene los archivos a bajar de la web',&#xA;    @subject = 'SSIS - graba archivos a proc'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -1217,7 +1217,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un al grabar el archivo excel en una tabla intermedia',&#xA;    @subject = 'SSIS - graba excel en tabla intermedia'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un al grabar el archivo excel en una tabla intermedia',&#xA;    @subject = 'SSIS - graba excel en tabla intermedia'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -1498,7 +1498,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'se produjo un error al ejecutar el SP Stp_ProcesaFasecolda ',&#xA;    @subject = 'SSIS - ERROR SP Stp_ProcesaFasecolda '" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'se produjo un error al ejecutar el SP Stp_ProcesaFasecolda ',&#xA;    @subject = 'SSIS - ERROR SP Stp_ProcesaFasecolda '" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -1557,7 +1557,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un error al grabar archivo fasecolda a la base de datos',&#xA;    @subject = 'SSIS - Graba Tablas Fasecolda'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al grabar archivo fasecolda a la base de datos',&#xA;    @subject = 'SSIS - Graba Tablas Fasecolda'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -1616,7 +1616,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un error al truncar la tabla que usa el package ',&#xA;    @subject = 'SSIS - trunca tabla de archivos csv'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al truncar la tabla que usa el package ',&#xA;    @subject = 'SSIS - trunca tabla de archivos csv'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -1674,7 +1674,7 @@
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A92F67BF-6B0E-44B9-BC14-34C71CFC5425}"
                   SQLTask:BypassPrepare="False"
-                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'japaricio@Falabella.com.co;armurciac@Falabella.com.co;olhiguera@falabella.com.co;ccantor@falabella.com.co;stefacevedo@Falabella.com.co;dacajiaoga@Falabella.com.co;ext_mgutierrezg@Falabella.cl;affuentes@Falabella.cl;ext_acarvajals@Falabella.cl;crisrobles@falabella.cl;ext_ptorresdeg@Falabella.cl;bnabatted@falabella.cl;crirodriguez@Falabella.com.co;ext_fescobarm@Falabella.cl;hfnunezd@falabella.cl;fbachurm@Falabella.cl;jeortegonl@Falabella.com.co;ext_joespinalb@Falabella.cl;ext_laavendanog@falabella.cl;ext_mlunal@Falabella.cl;rlbustamante@Falabella.cl;sesepulvedaf@falabella.cl;jfarroyoc@falabella.cl;ijsilva@falabella.cl',&#xA;    @body = 'Se produjo un error al intentar truncar la tabla de paso del proceso',&#xA;    @subject = 'SSIS - Trunca tabla paso'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;    @profile_name = 'AzureManagedInstance_dbmail_profile',&#xA;    @recipients = 'crisrobles@falabella.cl;ruben.saavedra@enaccion-c.cl',&#xA;    @body = 'Se produjo un error al intentar truncar la tabla de paso del proceso',&#xA;    @subject = 'SSIS - Trunca tabla paso'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>

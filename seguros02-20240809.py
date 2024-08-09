@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By  # Importación correcta de By
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import os
@@ -8,14 +8,8 @@ import time
 import zipfile
 import sys
 
-# Configura la variable PATH para ChromeDriver
-os.environ['PATH'] += os.pathsep + r'C:\Users\crisrobles\Downloads\chromedriver'  # Cambia esta ruta a donde has descargado ChromeDriver
-
-# Argumentos del script
 archivo_control = sys.argv[1]
-ruta_destino = sys.argv[2]
 
-# Leer archivo de control
 with open(archivo_control, "r") as f:
     contenido_archivo_entrada = f.read()
 
@@ -24,17 +18,12 @@ Nombre_directorio_bajada = x[1]
 Nombre_id_elemento = x[0].strip()
 print(Nombre_id_elemento)
 
-# Configura las opciones de Chrome
+ruta_destino = sys.argv[2]
 chrome_options = Options()
-chrome_options.add_experimental_option("prefs", {
-    "download.default_directory": ruta_destino,
-    "download.prompt_for_download": False,
-    "download.directory_upgrade": True,
-    "safebrowsing.enabled": True
-})
+
+archivos_en_descargas = os.listdir(ruta_destino)
 
 # Eliminar cada archivo en el directorio de descargas
-archivos_en_descargas = os.listdir(ruta_destino)
 for archivo in archivos_en_descargas:
     try:
         os.remove(os.path.join(ruta_destino, archivo))
@@ -42,44 +31,48 @@ for archivo in archivos_en_descargas:
     except Exception as e:
         print(f"No se pudo eliminar el archivo {archivo}: {e}")
 
-# Inicializa el navegador usando WebDriver Manager
-try:
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
-    driver.maximize_window()
+# Configura las opciones de Chrome
+chrome_options.add_experimental_option("prefs", {
+    "download.default_directory": ruta_destino,
+    "download.prompt_for_download": False,
+    "download.directory_upgrade": True,
+    "safebrowsing.enabled": True
+})
 
+# Inicializa el navegador usando WebDriver Manager
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+driver.maximize_window()
+
+try:
     # Abre la página web
     driver.get("https://guiadevalores.fasecolda.com/ConsultaExplorador/Default.aspx?url=C:\\inetpub\\wwwroot\\Fasecolda\\ConsultaExplorador\\Guias\\GuiaValores_NuevoFormato\\" + Nombre_directorio_bajada)
-    
-    # Descargar primer archivo
     nombre_archivo = "Guia_Excel"
+    # Encuentra el enlace que activa la descarga del archivo mediante su ID
     download_link = driver.find_element(By.XPATH, f"//a[contains(text(), '{nombre_archivo}')]")
     download_link.click()
 
     # Espera a que la descarga comience
-    timeout = 60  # Espera hasta 60 segundos
-    start_time = time.time()
-    while any(archivo.endswith('.crdownload') for archivo in os.listdir(ruta_destino)):
-        if time.time() - start_time > timeout:
-            print("Tiempo de espera excedido para Guia_Excel.")
-            break
-        time.sleep(1)
-    else:
-        print("El archivo Guia_Excel se ha descargado correctamente.")
-
-    # Descargar segundo archivo
-    nombre_archivo = "Tabla de Homologacion"
-    download_link = driver.find_element(By.XPATH, f"//a[contains(text(), '{nombre_archivo}')]")
-    download_link.click()
+    # time.sleep(30)  # Ajusta según sea necesario
 
     # Espera a que la descarga se complete
+    timeout = 60  # Espera hasta 60 segundos
+    nombre_archivo = "Tabla de Homologacion"
+    # Encuentra el enlace que activa la descarga del archivo mediante su ID
+    download_link = driver.find_element(By.XPATH, f"//a[contains(text(), '{nombre_archivo}')]")
+    download_link.click()
+    timeout = 60  # Espera hasta 60 segundos
+
     start_time = time.time()
-    while any(archivo.endswith('.crdownload') for archivo in os.listdir(ruta_destino)):
-        if time.time() - start_time > timeout:
-            print("Tiempo de espera excedido para Tabla de Homologacion.")
+    while True:
+        archivos_en_descargas = os.listdir(ruta_destino)
+        if any(archivo.endswith('.crdownload') for archivo in archivos_en_descargas):
+            if time.time() - start_time > timeout:
+                print("Tiempo de espera excedido.")
+                break
+            time.sleep(1)
+        else:
+            print("El archivo se ha descargado correctamente.")
             break
-        time.sleep(1)
-    else:
-        print("El archivo Tabla de Homologacion se ha descargado correctamente.")
 
 finally:
     # Cierra el navegador
@@ -87,7 +80,7 @@ finally:
     print("El navegador se cerró correctamente.")
 
 # Descomprimir el archivo descargado
-for archivo in os.listdir(ruta_destino):
+for archivo in archivos_en_descargas:
     if archivo.endswith('.zip'):
         ruta_archivo_zip = os.path.join(ruta_destino, archivo)
         with zipfile.ZipFile(ruta_archivo_zip, 'r') as zip_ref:
